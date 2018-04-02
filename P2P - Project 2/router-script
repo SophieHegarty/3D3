@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo 'xterm -title "A" -hold -e "./router topology.txt A | tee outputA.txt" & sleep 1
+xterm -title "B" -hold -e "./router topology.txt B | tee outputB.txt" & sleep 1
+xterm -title "C" -hold -e "./router topology.txt C | tee outputC.txt" & sleep 1
+xterm -title "D" -hold -e "./router topology.txt D | tee outputD.txt" & sleep 1
+xterm -title "E" -hold -e "./router topology.txt E | tee outputE.txt" & sleep 1
+xterm -title "F" -hold -e "./router topology.txt F | tee outputF.txt" & sleep 1' | shuf > exec
+chmod 777 exec
+./exec
+rm exec
